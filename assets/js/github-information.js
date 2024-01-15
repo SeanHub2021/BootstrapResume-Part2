@@ -39,7 +39,8 @@ function repoInformationHTML(repos) {//pass the function the ITEM returned from 
 }
 
 function fetchGitHubInformation(event) {
-
+    $("#gh-user-data").html("");//clear the user data text box
+    $("gh-repo-data").html("");//clear the user data text box
     var username = $("#gh-username").val();
     if (!username) {
         $("#gh-user-data").html(`<h2>Please enter a GitHub username</h2>`);
@@ -72,3 +73,5 @@ function fetchGitHubInformation(event) {
             }
         });
 }
+
+$(document).ready(fetchGitHubInformation) //when the document is ready, fetch the github information for the text box - the default text of which, is Octocat, so their profile.
